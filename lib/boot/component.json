@@ -9,6 +9,7 @@
   ],
   "local": [
     "drop",
+    "list",
     "minify"
   ]
 }
