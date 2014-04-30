@@ -1,0 +1,29 @@
+{
+  "name": "imagemin",
+  "version": "0.1.0",
+  "description": "Graphical user interface for imagemin",
+  "private": true,
+  "license": "MIT",
+  "repository": "kevva/imagemin-gui",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "main": "index.html",
+  "window": {
+    "title": "imagemin",
+    "toolbar": true,
+    "frame": true,
+    "width": 1000,
+    "height": 700,
+    "min_width": 700,
+    "min_height": 400,
+    "position": "center"
+  },
+  "dependencies": {
+    "component": "^0.19.9",
+    "component-builder": "^1.1.5",
+    "nodewebkit": "^0.8.6"
+  }
+}

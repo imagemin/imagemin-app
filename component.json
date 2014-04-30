@@ -1,0 +1,12 @@
+{
+  "name": "imagemin",
+  "paths": [
+    "lib"
+  ],
+  "local": [
+    "boot"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

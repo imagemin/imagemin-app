@@ -1,0 +1,6 @@
+{
+  "name": "boot",
+  "scripts": [
+    "index.js"
+  ]
+}
