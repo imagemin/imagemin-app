@@ -1,0 +1,12 @@
+{
+  "name": "drop",
+  "dependencies": {
+    "component/drop": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.css"
+  ]
+}

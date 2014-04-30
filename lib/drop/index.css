@@ -1,0 +1,10 @@
+#Drop {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 3px dashed #000;
+}
+
+#Drop.over {
+    border-color: red;
+}

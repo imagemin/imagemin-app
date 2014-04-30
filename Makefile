@@ -4,7 +4,7 @@ SRC = $(wildcard lib/*/*.js)
 APP = /tmp/imagemin.nw
 
 run: build
-	@rm -f $(APP)
+	@rm -rf $(APP)
 	zip -rq $(APP) *
 	$(WEBKIT) $(APP)
 
@@ -16,7 +16,7 @@ components:
 
 node_modules: package.json
 	@npm install
-	@rm -rf ./node_modules/nodewebkit/package.json
+	mv ./node_modules/nodewebkit/package.json ./node_modules/nodewebkit/_package.json
 
 clean_build:
 	rm -rf build
