@@ -2,6 +2,8 @@
 
 > [imagemin](https://github.com/kevva/imagemin) as an OS X, Linux and Windows app
 
+<img width="400" src="media/icon.png">
+
 
 ## Install
 

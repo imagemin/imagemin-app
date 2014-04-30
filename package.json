@@ -19,7 +19,8 @@
     "height": 600,
     "min_width": 600,
     "min_height": 600,
-    "position": "center"
+    "position": "center",
+    "icon": "media/icon.png"
   },
   "dependencies": {
     "component": "^0.19.9",
