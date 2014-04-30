@@ -1,13 +1,16 @@
-# imagemin-gui
+# imagemin-app
 
-> A graphical user interface for imagemin
+> [imagemin](https://github.com/kevva/imagemin) as an OS X, Linux and Windows app
+
 
 ## Install
 
-```bash
-$ git clone https://github.com/kevva/imagemin-gui.git
+```sh
+$ git clone https://github.com/kevva/imagemin-app.git
 $ make
+$ say awesome
 ```
+
 
 ## License
 
