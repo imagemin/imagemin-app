@@ -1,4 +1,4 @@
-#Drop {
+.Drop {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -10,6 +10,6 @@
     transition: all 0.25s ease-in-out;
 }
 
-#Drop.over {
+.Drop.over {
     border-color: #000;
 }

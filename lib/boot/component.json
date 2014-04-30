@@ -9,7 +9,7 @@
   ],
   "local": [
     "drop",
-    "list",
+    "progress",
     "minify"
   ]
 }
