@@ -24,4 +24,4 @@ clean_build:
 clean_component: clean_build
 	rm -rf components
 
-.PHONY: clean_build clean_components run
+.PHONY: clean_build clean_component run
