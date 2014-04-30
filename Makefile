@@ -16,6 +16,7 @@ components:
 
 node_modules: package.json
 	@npm install
+	@rm -rf ./node_modules/nodewebkit/package.json
 
 clean_build:
 	rm -rf build

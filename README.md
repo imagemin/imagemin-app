@@ -1,4 +1,4 @@
-# imagemin-gui [![Build Status](https://travis-ci.org/kevva/imagemin-gui.svg?branch=master)](https://travis-ci.org/kevva/imagemin-gui)
+# imagemin-gui
 
 > A graphical user interface for imagemin
 
