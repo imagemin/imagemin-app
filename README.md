@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-$ git clone https://github.com/kevva/imagemin.git
+$ git clone https://github.com/kevva/imagemin-gui.git
 $ make
 ```
 
