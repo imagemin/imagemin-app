@@ -1,0 +1,9 @@
+{
+  "name": "minify",
+  "dependencies": {
+    "sindresorhus/each-async": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}

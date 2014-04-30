@@ -24,6 +24,7 @@
   "dependencies": {
     "component": "^0.19.9",
     "component-builder": "^1.1.5",
+    "imagemin": "^0.4.5",
     "nodewebkit": "^0.8.6"
   }
 }

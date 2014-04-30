@@ -7,10 +7,8 @@
   "scripts": [
     "index.js"
   ],
-  "styles": [
-    "index.css"
-  ],
   "local": [
-    "drop"
+    "drop",
+    "minify"
   ]
 }
