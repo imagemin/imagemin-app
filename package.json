@@ -13,7 +13,7 @@
   "main": "index.html",
   "window": {
     "title": "imagemin",
-    "toolbar": false,
+    "toolbar": true,
     "frame": true,
     "width": 600,
     "height": 600,
