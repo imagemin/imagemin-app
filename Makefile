@@ -1,12 +1,9 @@
 COMPONENT = ./node_modules/.bin/component
 WEBKIT = ./node_modules/.bin/nodewebkit
 SRC = $(wildcard lib/*/*.js)
-APP = /tmp/imagemin.nw
 
 run: build
-	@rm -rf $(APP)
-	zip -rq $(APP) *
-	$(WEBKIT) $(APP)
+	$(WEBKIT) ./
 
 build: node_modules components $(SRC)
 	@$(COMPONENT) build --standalone imagemin
