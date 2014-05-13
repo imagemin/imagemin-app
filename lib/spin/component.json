@@ -1,7 +1,7 @@
 {
-  "name": "drop",
+  "name": "spin",
   "dependencies": {
-    "component/drop": "*"
+    "component/spin": "*"
   },
   "scripts": [
     "index.js"
