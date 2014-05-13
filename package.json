@@ -13,7 +13,7 @@
   "main": "index.html",
   "window": {
     "title": "imagemin-app",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "width": 600,
     "height": 600,

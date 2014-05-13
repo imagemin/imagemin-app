@@ -1,6 +1,12 @@
 COMPONENT = ./node_modules/.bin/component
 WEBKIT = ./node_modules/.bin/nodewebkit
 SRC = $(wildcard lib/*/*.js)
+APP = ./release/imagemin-app.nw
+
+release: build
+	@rm -rf $(APP)
+	mkdir ./release
+	zip -rq $(APP) *
 
 run: build
 	$(WEBKIT) ./
