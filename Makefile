@@ -13,7 +13,6 @@ components:
 
 node_modules: package.json
 	@npm install
-	mv ./node_modules/nodewebkit/package.json ./node_modules/nodewebkit/_package.json
 
 clean_build:
 	rm -rf build

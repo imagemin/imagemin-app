@@ -8,8 +8,7 @@
     "index.js"
   ],
   "local": [
-    "drop",
-    "progress",
-    "minify"
+    "compress",
+    "drop"
   ]
 }
