@@ -1,8 +1,6 @@
-# imagemin-app
+# <img src="https://cloud.githubusercontent.com/assets/709159/2954693/97fa771a-da76-11e3-90ac-07fbc5ca943f.png" alt="imagemin-app">
 
 > [imagemin](https://github.com/kevva/imagemin) as an OS X, Linux and Windows app
-
-<img width="400" src="media/icon.png">
 
 
 ## Install
