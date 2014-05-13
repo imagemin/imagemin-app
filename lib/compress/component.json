@@ -1,7 +1,6 @@
 {
   "name": "compress",
   "dependencies": {
-    "component/emitter": "*",
     "sindresorhus/each-async": "*"
   },
   "scripts": [

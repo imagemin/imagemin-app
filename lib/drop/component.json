@@ -1,6 +1,7 @@
 {
   "name": "drop",
   "dependencies": {
+    "component/dom": "*",
     "component/drop": "*"
   },
   "scripts": [

@@ -1,11 +1,16 @@
 {
   "name": "boot",
   "dependencies": {
+    "component/css": "*",
+    "component/spin": "*",
     "necolas/normalize.css": "*",
     "suitcss/base": "*"
   },
   "scripts": [
     "index.js"
+  ],
+  "styles": [
+    "index.css"
   ],
   "local": [
     "compress",

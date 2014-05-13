@@ -1,5 +1,6 @@
 .Drop {
     position: absolute;
+    z-index: 10;
     top: 50%;
     left: 50%;
     width: 300px;
@@ -7,7 +8,6 @@
     margin: -150px 0 0 -150px;
     border: 3px dashed #999;
     border-radius: 15px;
-    transition: all 0.25s ease-in-out;
 }
 
 .Drop.over {
