@@ -7,7 +7,7 @@ run: build
 	$(WEBKIT) ./
 
 build: node_modules components $(SRC)
-	@$(COMPONENT) build --standalone imagemin
+	@$(COMPONENT) build --standalone imageminApp
 
 components:
 	@$(COMPONENT) install

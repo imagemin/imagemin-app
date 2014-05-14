@@ -1,0 +1,21 @@
+{
+  "name": "summary",
+  "dependencies": {
+    "component/domify": "*",
+    "component/event": "*",
+    "component/overlay": "*",
+    "sindresorhus/pretty-bytes": "*"
+  },
+  "images": [
+    "index.png"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.css"
+  ],
+  "templates": [
+    "index.html"
+  ]
+}

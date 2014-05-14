@@ -1,0 +1,34 @@
+.overlay {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.overlay-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('index.png');
+    background-repeat: no-repeat;
+}
+
+.Summary {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    margin-top: -22.5px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+}
+
+.Summary-files {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.Summary-bytes {
+    font-size: 14px;
+    font-weight: 200;
+}
