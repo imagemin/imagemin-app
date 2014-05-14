@@ -2,7 +2,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 600px;
-    height: 600px;
-    margin: -300px 0 0 -300px;
+    width: 400px;
+    height: 400px;
+    margin: -200px 0 0 -200px;
+}
+
+@media (min-width: 600px) {
+    .Spin {
+        width: 600px;
+        height: 600px;
+        margin: -300px 0 0 -300px;
+    }
 }
