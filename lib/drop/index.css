@@ -10,7 +10,7 @@
     border-radius: 15px;
 }
 
-.Drop.over {
+body.over .Drop {
     border-color: #000;
 }
 
