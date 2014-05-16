@@ -13,6 +13,13 @@ $ say awesome
 ```
 
 
+## Related
+
+- [imagemin CLI](https://github.com/kevva/imagemin#cli)
+- [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
+- [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
+
+
 ## License
 
 MIT © [Kevin Mårtensson](https://github.com/kevva)
