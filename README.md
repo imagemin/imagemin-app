@@ -7,6 +7,7 @@
 
 ```sh
 $ git clone https://github.com/kevva/imagemin-app.git
+$ cd imagemin-app
 $ make
 $ say awesome
 ```
