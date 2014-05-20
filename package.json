@@ -10,22 +10,10 @@
     "email": "kevinmartensson@gmail.com",
     "url": "https://github.com/kevva"
   },
-  "main": "index.html",
-  "window": {
-    "title": "imagemin-app",
-    "toolbar": false,
-    "frame": true,
-    "width": 400,
-    "height": 400,
-    "min_width": 400,
-    "min_height": 400,
-    "position": "center",
-    "icon": "media/icon.png"
-  },
+  "main": "main.js",
   "dependencies": {
     "component": "^0.19.9",
     "component-builder": "^1.1.5",
-    "imagemin": "^0.4.5",
-    "nodewebkit": "^0.8.6"
+    "imagemin": "^0.4.5"
   }
 }
