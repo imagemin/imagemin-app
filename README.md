@@ -8,11 +8,9 @@
 ```sh
 $ git clone https://github.com/kevva/imagemin-app.git
 $ cd imagemin-app
-$ make
-$ say awesome
+$ npm install && npm run build
+$ path/to/atom-shell ./
 ```
-
-Or download the [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.0.1/imagemin.app.zip) *(alpha)* to run it the easy way.
 
 
 ## Related
