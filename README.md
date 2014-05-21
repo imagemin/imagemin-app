@@ -10,7 +10,7 @@ Install using a binary:
 * [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-darwin.zip)
 * [Windows binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-win32.zip)
 
-Or run it manually by following the instructions below:
+Or run it manually by first installing [atom-shell](https://github.com/atom/atom-shell/releases) and follow the instructions below:
 
 ```sh
 $ git clone https://github.com/kevva/imagemin-app.git
@@ -18,6 +18,9 @@ $ cd imagemin-app
 $ npm install && npm start
 $ path/to/atom-shell ./
 ```
+
+The path to atom-shell differs depending on your OS. Read the [docs](https://github.com/atom/atom-shell/blob/master/docs/tutorial/quick-start.md#run-your-app)
+to find out how.
 
 
 ## Related
