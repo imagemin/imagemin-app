@@ -1,6 +1,8 @@
 {
   "name": "spin",
   "dependencies": {
+    "component/classes": "*",
+    "component/emitter": "*",
     "component/spin": "*"
   },
   "scripts": [

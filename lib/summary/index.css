@@ -1,34 +1,25 @@
-.overlay {
-    background: rgba(255, 255, 255, 0.85);
-}
-
-.overlay-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('index.png');
-    background-repeat: no-repeat;
-}
-
 .Summary {
     position: absolute;
     top: 50%;
     right: 0;
     left: 0;
-    margin-top: -22.5px;
+    display: none;
+    margin-top: -32px;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     text-align: center;
 }
 
-.Summary-files {
+.Summary.is-visible {
+    display: block;
+}
+
+.Summary > p:first-child {
+    margin-bottom: 0.5em;
     font-size: 24px;
     font-weight: 100;
 }
 
-.Summary-bytes {
+.Summary > p:last-child {
     font-size: 14px;
     font-weight: 200;
 }

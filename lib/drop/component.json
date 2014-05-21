@@ -1,7 +1,10 @@
 {
   "name": "drop",
   "dependencies": {
-    "component/drop": "*"
+    "component/classes": "*",
+    "component/emitter": "*",
+    "component/events": "*",
+    "component/normalized-upload": "*"
   },
   "scripts": [
     "index.js"

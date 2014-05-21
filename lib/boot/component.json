@@ -7,9 +7,12 @@
   "scripts": [
     "index.js"
   ],
+  "styles": [
+    "index.css"
+  ],
   "local": [
-    "compress",
     "drop",
+    "minify",
     "spin",
     "summary"
   ]
