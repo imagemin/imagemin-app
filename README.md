@@ -7,8 +7,9 @@
 
 Install using a binary:
 
-* [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-darwin.zip)
-* [Windows binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-win32.zip)
+* [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.1.0/imagemin-app-v0.1.0-darwin.zip)
+* [Linux binary](https://github.com/kevva/imagemin-app/releases/download/0.1.0/imagemin-app-v0.1.0-linux.zip)
+* [Windows binary](https://github.com/kevva/imagemin-app/releases/download/0.1.0/imagemin-app-v0.1.0-win32.zip)
 
 Or run it manually by first installing [atom-shell](https://github.com/atom/atom-shell/releases) and follow the instructions below:
 
