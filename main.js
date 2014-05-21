@@ -30,12 +30,6 @@ app.on('will-finish-launching', function () {
 });
 
 /**
- * Set badge text
- */
-
-app.dock.setBadge('imagemin-app');
-
-/**
  * On ready
  */
 
