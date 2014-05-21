@@ -7,8 +7,8 @@
 
 Install using a binary:
 
-* [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-darwin.zip)
-* [Windows binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-win32.zip)
+* [OS X binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-darwin.zip)
+* [Windows binary](https://github.com/kevva/imagemin-app/releases/download/0.0.2/imagemin-app-v0.1.0-win32.zip)
 
 Or run it manually by following the instructions below:
 
