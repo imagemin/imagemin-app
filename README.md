@@ -15,7 +15,7 @@ Or run it manually by following the instructions below:
 ```sh
 $ git clone https://github.com/kevva/imagemin-app.git
 $ cd imagemin-app
-$ npm install && npm run build
+$ npm install && npm start
 $ path/to/atom-shell ./
 ```
 

@@ -11,7 +11,7 @@
     "url": "https://github.com/kevva"
   },
   "scripts": {
-    "build": "./node_modules/.bin/component install && ./node_modules/.bin/component build --standalone imageminApp"
+    "start": "./node_modules/.bin/component install && ./node_modules/.bin/component build --standalone imageminApp"
   },
   "main": "main.js",
   "dependencies": {
