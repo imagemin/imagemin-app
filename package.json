@@ -6,9 +6,12 @@
   "license": "MIT",
   "main": "main.js",
   "devDependencies": {
+    "clean-css": "^2.2.13",
     "duo": "^0.7.5",
     "each-async": "^1.0.0",
     "imagemin": "^1.0.2",
-    "myth": "^1.1.1"
+    "myth": "^1.1.1",
+    "object-assign": "^1.0.0",
+    "uglify-js": "^2.4.15"
   }
 }
