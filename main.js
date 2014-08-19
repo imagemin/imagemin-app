@@ -16,9 +16,9 @@ var win = null;
  */
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+	if (process.platform !== 'darwin') {
+		app.quit();
+	}
 });
 
 /**
@@ -26,7 +26,7 @@ app.on('window-all-closed', function () {
  */
 
 app.on('will-finish-launching', function () {
-    crashReporter.start({ productName: 'imagemin-app' });
+	crashReporter.start({ productName: 'imagemin-app' });
 });
 
 /**
@@ -34,10 +34,10 @@ app.on('will-finish-launching', function () {
  */
 
 app.on('finish-launching', function () {
-    win = new BrowserWindow({ width: 500, height: 450 });
-    win.loadUrl('file://' + __dirname + '/index.html');
+	win = new BrowserWindow({ width: 500, height: 450 });
+	win.loadUrl('file://' + __dirname + '/index.html');
 
-    win.on('closed', function () {
-        win = null;
-    });
+	win.on('closed', function () {
+		win = null;
+	});
 });
