@@ -2,7 +2,6 @@
 
 var app = require('app');
 var BrowserWindow = require('browser-window');
-var crashReporter = require('crash-reporter');
 
 /**
  * Keep a global reference of the window object, if you don't, the window will
@@ -22,19 +21,17 @@ app.on('window-all-closed', function () {
 });
 
 /**
- * Report crashes to our server
- */
-
-app.on('will-finish-launching', function () {
-	crashReporter.start({ productName: 'imagemin-app' });
-});
-
-/**
  * On ready
  */
 
 app.on('finish-launching', function () {
-	win = new BrowserWindow({ width: 500, height: 450 });
+	win = new BrowserWindow({
+		icon: './media/icon.png'
+	});
+
+	win.setSize(475, 400);
+	win.center();
+	win.setTitle('Imagemin ' + app.getVersion());
 	win.loadUrl('file://' + __dirname + '/index.html');
 
 	win.on('closed', function () {

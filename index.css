@@ -1,0 +1,41 @@
+@import "necolas/normalize.css";
+@import "suitcss/base:lib/base.css";
+
+:root {
+	--base-font: 16px/1.5 sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+	color: rgba(255, 255, 255, 0.8);
+	background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+}
+
+#drop-anywhere {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#drop-anywhere:before {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 250px;
+	margin: -130px 0 0 -125px;
+	border: 3px dashed rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
+	transition: all 0.25s ease-in-out;
+	content: '';
+}
+
+#drop-anywhere.show:before {
+	border-color: rgba(255, 255, 255, 0.85);
+}
