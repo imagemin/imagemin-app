@@ -13,10 +13,10 @@ Install using a binary:
 
 Or run it manually by first installing [atom-shell](https://github.com/atom/atom-shell/releases), add it to your `PATH` and follow the instructions below:
 
-```
-$ git clone https://github.com/imagemin/imagemin-app.git
-$ cd imagemin-app
-$ make app
+```shell
+git clone https://github.com/imagemin/imagemin-app.git
+cd imagemin-app
+make app
 ```
 
 
