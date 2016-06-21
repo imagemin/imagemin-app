@@ -22,7 +22,7 @@ $ make app
 
 ## Related
 
-- [imagemin CLI](https://github.com/imagemin/imagemin#cli)
+- [imagemin CLI](https://github.com/imagemin/imagemin-cli)
 - [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
 - [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
 
