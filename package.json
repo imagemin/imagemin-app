@@ -1,17 +1,102 @@
 {
-  "name": "imagemin-app",
-  "private": true,
-  "version": "0.1.0",
-  "description": "imagemin as an OS X, Linux and Windows app",
-  "license": "MIT",
-  "main": "main.js",
-  "devDependencies": {
-    "clean-css": "^2.2.13",
-    "duo": "^0.7.5",
-    "each-async": "^1.0.0",
-    "imagemin": "^1.0.2",
-    "myth": "^1.1.1",
-    "object-assign": "^1.0.0",
-    "uglify-js": "^2.4.15"
-  }
+	"name": "imagemin-app",
+	"productName": "Imagemin",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": "imagemin/imagemin-app",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"scripts": {
+		"build": "next build && next export",
+		"dist": "build",
+		"postinstall": "electron-builder install-app-deps install-app-deps",
+		"start": "electron .",
+		"test": "xo"
+	},
+	"dependencies": {
+		"electron-debug": "^1.4.0",
+		"electron-is-dev": "^0.3.0",
+		"electron-localshortcut": "^2.0.0",
+		"electron-log": "^2.0.2",
+		"electron-store": "^1.1.0",
+		"electron-updater": "^2.8.7",
+		"imagemin": "^5.3.1",
+		"next": "^3.0.6",
+		"prop-types": "^15.5.10",
+		"react": "^15.6.1",
+		"react-dnd": "^2.4.0",
+		"react-dnd-html5-backend": "^2.4.1",
+		"react-dom": "^15.6.1"
+	},
+	"devDependencies": {
+		"electron": "^1.7.5",
+		"electron-builder": "^19.22.1",
+		"electron-next": "^3.1.1",
+		"eslint-config-xo-react": "^0.13.0",
+		"eslint-plugin-react": "^7.2.1",
+		"xo": "*"
+	},
+	"build": {
+		"files": [
+			"**/*",
+			"!media${/*}",
+			"!renderer",
+			"renderer/out"
+		],
+		"appId": "com.imagemin.imagemin",
+		"mac": {
+			"category": "public.app-category.developer-tools",
+			"target": [
+				"dmg",
+				"zip",
+				"mas"
+			]
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"category": "Development",
+			"target": [
+				"AppImage",
+				"deb"
+			]
+		},
+		"win": {
+			"target": [
+				"nsis"
+			]
+		}
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		],
+		"extends": [
+			"xo-react"
+		],
+		"rules": {
+			"jsx-quotes": [
+				2,
+				"prefer-single"
+			],
+			"react/require-default-props": 0
+		}
+	}
 }

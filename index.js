@@ -1,126 +1,89 @@
-/* global node */
 'use strict';
+const path = require('path');
+const {BrowserWindow, app, ipcMain} = require('electron');
+const {autoUpdater} = require('electron-updater');
+const electronNext = require('electron-next');
+const imagemin = require('imagemin');
+const isDev = require('electron-is-dev');
+const log = require('electron-log');
 
-var assign = node('object-assign');
-var drop = require('component/drop-anywhere');
-var each = node('each-async');
-var fs = node('fs');
-var Imagemin = node('imagemin');
-var path = node('path');
-var Spinner = require('component/spinner');
+app.setAppUserModelId('com.imagemin.imagemin');
+app.disableHardwareAcceleration();
 
-/**
- * Minify images
- *
- * @param {Object} file
- * @param {Function} cb
- * @api private
- */
+require('electron-debug')({enabled: true});
 
-function minify(file, cb) {
-	fs.readFile(file.path, function (err, buf) {
-		if (err) {
-			cb(err);
-			return;
+const port = 3000;
+
+let mainWindow;
+let isQuitting;
+
+const isAlreadyRunning = app.makeSingleInstance(() => {
+	if (mainWindow) {
+		if (mainWindow.isMinimized()) {
+			mainWindow.restore();
 		}
 
-		var imagemin = new Imagemin()
-			.src(buf)
-			.dest(path.join(path.dirname(file.path), 'build', path.basename(file.path)))
-			.use(Imagemin.gifsicle())
-			.use(Imagemin.jpegtran())
-			.use(Imagemin.optipng())
-			.use(Imagemin.pngquant())
-			.use(Imagemin.svgo());
+		mainWindow.show();
+	}
+});
 
-		imagemin.optimize(function (err, file) {
-			if (err) {
-				cb(err);
-				return;
+const createMainWindow = () => {
+	const win = new BrowserWindow({
+		title: app.getName(),
+		width: 800,
+		height: 600,
+		icon: process.platform === 'linux' && path.join(__dirname, 'static/icon.png'),
+		autoHideMenuBar: true,
+		titleBarStyle: 'hidden-inset'
+	});
+
+	win.on('close', e => {
+		if (!isQuitting) {
+			e.preventDefault();
+
+			if (process.platform === 'darwin') {
+				app.hide();
+			} else {
+				win.hide();
 			}
-
-			cb(null, assign(file, { original: buf }));
-		});
-	});
-}
-
-/**
- * Create spinner
- *
- * @api private
- */
-
-function spin() {
-	var w = document.body.offsetWidth;
-	var h = document.body.offsetHeight;
-	var s = new Spinner()
-		.size(w / 4)
-		.light();
-
-	s.el.style.position = 'absolute';
-	s.el.style.top = h / 2 - (w / 4) / 2 + 'px';
-	s.el.style.left = w / 2 - (w / 4) / 2 + 'px';
-
-	spin.remove = function () {
-		document.body.removeChild(s.el);
-	};
-
-	window.addEventListener('resize', function () {
-		w = document.body.offsetWidth;
-		h = document.body.offsetHeight;
+		}
 	});
 
-	document.body.appendChild(s.el);
-	return s;
-}
-
-/**
- * Toggle display
- *
- * @param {Element} el
- * @api private
- */
-
-function toggle(el) {
-	el = document.querySelector(el);
-
-	if (el.style.display === 'none') {
-		el.style.display = 'block';
-		return;
+	if (process.platform === 'darwin') {
+		win.setSheetOffset(40);
 	}
 
-	el.style.display = 'none';
+	const devPath = `http://localhost:${port}`;
+	const prodPath = 'file://' + path.join(__dirname, 'out/index.html');
+
+	win.loadURL(isDev ? devPath : prodPath);
+
+	return win;
+};
+
+if (isAlreadyRunning) {
+	app.quit();
 }
 
-/**
- * Run
- */
+if (!isDev && process.platform !== 'linux') {
+	autoUpdater.logger = log;
+	autoUpdater.logger.transports.file.level = 'info';
+	autoUpdater.checkForUpdates();
+}
 
-drop(function (e) {
-	var files = [];
+ipcMain.on('drop-file', async (e, files) => {
+	await imagemin(files);
+});
 
-	toggle('#drop-anywhere');
-	spin();
+app.on('ready', async () => {
+	await electronNext('./', port);
+	mainWindow = createMainWindow();
+});
 
-	each(e.items, function (item, i, done) {
-		minify(item, function (err, file) {
-			if (err) {
-				done(err);
-				return;
-			}
+app.on('activate', () => {
+	mainWindow.show();
+});
 
-			files.push(file);
-			done();
-		});
-	}, function (err) {
-		if (err) {
-			console.error(err);
-			return;
-		}
-
-		toggle('#drop-anywhere');
-		spin.remove();
-
-		files = [];
-	});
+app.on('before-quit', () => {
+	isQuitting = true;
 });
