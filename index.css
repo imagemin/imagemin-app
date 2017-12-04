@@ -1,4 +1,4 @@
-@import 'necolas/normalize.css';
+@import 'necolas/normalize.css:normalize.css';
 @import 'suitcss/base:lib/base.css';
 
 :root {

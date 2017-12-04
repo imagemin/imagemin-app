@@ -3,15 +3,30 @@
   "private": true,
   "version": "0.1.0",
   "description": "imagemin as an OS X, Linux and Windows app",
+  "scripts": {
+    "start": "npm run build",
+    "app": "npm run build",
+    "build-index-js": "duo index.js && uglifyjs build/index.js -o build/index.js",
+    "build-index-css": "duo index.css && myth build/index.css build/index.css && cleancss build/index.css -o build/index.css",
+    "build": "rimraf build && mkdir build && npm run build-index-js && npm run build-index-css",
+    "node_modules": "npm install"
+  },
   "license": "MIT",
   "main": "main.js",
   "devDependencies": {
-    "clean-css": "^2.2.13",
-    "duo": "^0.7.5",
-    "each-async": "^1.0.0",
-    "imagemin": "^1.0.2",
-    "myth": "^1.1.1",
-    "object-assign": "^1.0.0",
-    "uglify-js": "^2.4.15"
-  }
+    "clean-css": "^4.1.9",
+    "clean-css-cli": "^4.1.10",
+    "duo": "^0.15.7",
+    "each-async": "^1.1.1",
+    "imagemin": "^5.3.1",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-pngquant": "^5.0.1",
+    "imagemin-svgo": "^6.0.0",
+    "myth6": "^1.5.0",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.2.1"
+  },
+  "dependencies": {}
 }
