@@ -1,13 +1,18 @@
 /* global node */
 'use strict';
 
-var assign = node('object-assign');
 var drop = require('component/drop-anywhere');
 var each = node('each-async');
 var fs = node('fs');
-var Imagemin = node('imagemin');
+var imagemin = node('imagemin');
 var path = node('path');
 var Spinner = require('component/spinner');
+
+var imageminGifsicle = node('imagemin-gifsicle');
+var imageminJpegtran = node('imagemin-jpegtran');
+var imageminOptipng = node('imagemin-optipng');
+var imageminPngquant = node('imagemin-pngquant');
+var imageminSvgo = node('imagemin-svgo');
 
 /**
  * Minify images
@@ -23,23 +28,19 @@ function minify(file, cb) {
 			cb(err);
 			return;
 		}
-
-		var imagemin = new Imagemin()
-			.src(buf)
-			.dest(path.join(path.dirname(file.path), 'build', path.basename(file.path)))
-			.use(Imagemin.gifsicle())
-			.use(Imagemin.jpegtran())
-			.use(Imagemin.optipng())
-			.use(Imagemin.pngquant())
-			.use(Imagemin.svgo());
-
-		imagemin.optimize(function (err, file) {
-			if (err) {
-				cb(err);
-				return;
-			}
-
-			cb(null, assign(file, { original: buf }));
+		imagemin([file.path], path.join(path.dirname(file.path), 'build'), {
+			plugins: [
+				imageminGifsicle(),
+				imageminJpegtran(),
+				imageminOptipng(),
+				imageminPngquant(),
+				imageminSvgo()
+			]
+		}).then(function(file){
+			cb(null, Object.assign(file, { original: buf }));
+		}).catch(function(err){
+			cb(err);
+			return;
 		});
 	});
 }
