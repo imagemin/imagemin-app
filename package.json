@@ -6,7 +6,9 @@
 	"scripts": {
 		"start": "npm run app && electron .",
 		"app": "npm run build",
-		"build-index-js": "duo index.js && uglifyjs build/index.js -o build/index.js",
+		"lint": "xo && stylelint --fix '**/*.css'",
+		"test": "npm run lint",
+		"build-index-js": "duo index.js && terser build/index.js -o build/index.js",
 		"build-index-css": "duo index.css && myth build/index.css build/index.css && cleancss build/index.css -o build/index.css",
 		"build": "rimraf build && mkdir build && npm run build-index-js && npm run build-index-css",
 		"node_modules": "npm install"
@@ -27,6 +29,22 @@
 		"imagemin-svgo": "^7.0.0",
 		"myth6": "^1.5.0",
 		"rimraf": "^2.6.2",
-		"uglify-js": "^3.4.9"
+		"stylelint": "^9.9.0",
+		"stylelint-config-standard": "^18.2.0",
+		"stylelint-config-xo": "^0.12.0",
+		"terser": "^3.13.1",
+		"xo": "^0.23.0"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		],
+		"rules": {
+			"import/no-unresolved": "off"
+		}
+	},
+	"stylelint": {
+		"extends": "stylelint-config-xo"
 	}
 }

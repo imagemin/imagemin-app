@@ -1,19 +1,19 @@
 'use strict';
 
-const { app, BrowserWindow } = require('electron');
+const {app, BrowserWindow} = require('electron');
 
 /**
  * Keep a global reference of the window object, if you don't, the window will
  * be closed automatically when the javascript object is GCed
  */
 
-var win = null;
+let win = null;
 
 /**
  * Quit when all windows are closed
  */
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
 	}
@@ -23,7 +23,7 @@ app.on('window-all-closed', function () {
  * On ready
  */
 
-app.on('ready', function () {
+app.on('ready', () => {
 	win = new BrowserWindow({
 		icon: './media/icon.png'
 	});
@@ -31,12 +31,12 @@ app.on('ready', function () {
 	win.setSize(475, 400);
 	win.center();
 	win.loadFile('index.html');
-	win.webContents.on('did-finish-load',() => {
+	win.webContents.on('did-finish-load', () => {
 		win.setTitle('Imagemin ' + app.getVersion());
 	});
-	//win.toggleDevTools();
+	// Win.toggleDevTools();
 
-	win.on('closed', function () {
+	win.on('closed', () => {
 		win = null;
 	});
 });

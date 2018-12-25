@@ -1,18 +1,19 @@
 /* global node */
 'use strict';
 
-var drop = require('component/drop-anywhere');
-var each = node('each-async');
-var fs = node('fs');
-var imagemin = node('imagemin');
-var path = node('path');
-var Spinner = require('component/spinner');
+const drop = require('component/drop-anywhere');
 
-var imageminGifsicle = node('imagemin-gifsicle');
-var imageminJpegtran = node('imagemin-jpegtran');
-var imageminOptipng = node('imagemin-optipng');
-var imageminPngquant = node('imagemin-pngquant');
-var imageminSvgo = node('imagemin-svgo');
+const each = node('each-async');
+const fs = node('fs');
+const imagemin = node('imagemin');
+const path = node('path');
+const Spinner = require('component/spinner');
+
+const imageminGifsicle = node('imagemin-gifsicle');
+const imageminJpegtran = node('imagemin-jpegtran');
+const imageminOptipng = node('imagemin-optipng');
+const imageminPngquant = node('imagemin-pngquant');
+const imageminSvgo = node('imagemin-svgo');
 
 /**
  * Minify images
@@ -23,7 +24,7 @@ var imageminSvgo = node('imagemin-svgo');
  */
 
 function minify(file, cb) {
-	fs.readFile(file.path, function (err, buf) {
+	fs.readFile(file.path, (err, buf) => {
 		if (err) {
 			cb(err);
 			return;
@@ -36,11 +37,10 @@ function minify(file, cb) {
 				imageminPngquant(),
 				imageminSvgo()
 			]
-		}).then(function(file){
-			cb(null, Object.assign(file, { original: buf }));
-		}).catch(function(err){
-			cb(err);
-			return;
+		}).then(file => {
+			cb(null, Object.assign(file, {original: buf}));
+		}).catch(error => {
+			cb(error);
 		});
 	});
 }
@@ -52,26 +52,27 @@ function minify(file, cb) {
  */
 
 function spin() {
-	var w = document.body.offsetWidth;
-	var h = document.body.offsetHeight;
-	var s = new Spinner()
+	let w = document.body.offsetWidth;
+	let h = document.body.offsetHeight;
+	const s = new Spinner()
 		.size(w / 4)
 		.light();
 
 	s.el.style.position = 'absolute';
-	s.el.style.top = h / 2 - (w / 4) / 2 + 'px';
-	s.el.style.left = w / 2 - (w / 4) / 2 + 'px';
+	s.el.style.top = `${(h / 2) - ((w / 4) / 2)}px`;
+	s.el.style.left = `${(w / 2) - ((w / 4) / 2)}px`;
 
-	spin.remove = function () {
+	spin.remove = () => {
 		document.body.removeChild(s.el);
 	};
 
-	window.addEventListener('resize', function () {
+	window.addEventListener('resize', () => {
 		w = document.body.offsetWidth;
 		h = document.body.offsetHeight;
 	});
 
 	document.body.appendChild(s.el);
+
 	return s;
 }
 
@@ -97,14 +98,14 @@ function toggle(el) {
  * Run
  */
 
-drop(function (e) {
-	var files = [];
+drop(e => {
+	let files = [];
 
 	toggle('#drop-anywhere');
 	spin();
 
-	each(e.items, function (item, i, done) {
-		minify(item, function (err, file) {
+	each(e.items, (item, i, done) => {
+		minify(item, (err, file) => {
 			if (err) {
 				done(err);
 				return;
@@ -113,7 +114,7 @@ drop(function (e) {
 			files.push(file);
 			done();
 		});
-	}, function (err) {
+	}, err => {
 		if (err) {
 			console.error(err);
 			return;
